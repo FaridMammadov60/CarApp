@@ -55,7 +55,7 @@ namespace DataAccess.Repositories
         {
             try
             {
-                return filter == null ? null :
+                return filter == null ? DataContext.Brands :
                     DataContext.Brands.FindAll(filter);
             }
             catch (Exception)

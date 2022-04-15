@@ -8,12 +8,20 @@ namespace Utilities.Helper
 {
     public static class Extention
     {
+        /// <summary>
+        /// Consola message verir
+        /// </summary>
+        /// <param name="color"></param>
+        /// <param name="message"></param>
         public static void Print(ConsoleColor color, string message)
         {
             Console.ForegroundColor = color;
             Console.WriteLine(message);
             Console.ResetColor();
         }
+        /// <summary>
+        /// Consola menu qaytarır
+        /// </summary>
         public static void PrintMenu()
         {
             Print(ConsoleColor.Cyan, $"1-Create Brand\n" +
@@ -29,7 +37,9 @@ namespace Utilities.Helper
                 $"11-Model Added Brand\n" +
                 $"0-Quit");
         }
-
+        /// <summary>
+        /// Menu reqemlerin enum ile formas
+        /// </summary>
         public enum Menu
         {
             Quit = 0,
@@ -45,7 +55,10 @@ namespace Utilities.Helper
             CreateModel = 10,
             ModelAddBrand = 11
         }
-
+        /// <summary>
+        /// Daxil edilmiş int type-ın boş ve integer olmasın yoxlayıb doğru neticeni yazmağa mecbur edir
+        /// </summary>
+        /// <returns></returns>
         public static int TryParseMethod()
         {
         T1: string num = Console.ReadLine();
@@ -62,7 +75,10 @@ namespace Utilities.Helper
             }
 
         }
-
+        /// <summary>
+        /// Daxil edilmiş string type-ın boş və null olmasın yoxlayır ve doldurmağa məcbur edir
+        /// </summary>
+        /// <returns></returns>
         public static string TryEmptyMethod()
         {
         T1: string num = Console.ReadLine();

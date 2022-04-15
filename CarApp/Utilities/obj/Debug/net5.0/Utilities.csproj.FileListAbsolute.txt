@@ -1,0 +1,12 @@
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\bin\Debug\net5.0\Utilities.deps.json
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\bin\Debug\net5.0\Utilities.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\bin\Debug\net5.0\Utilities.pdb
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.csproj.AssemblyReference.cache
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.AssemblyInfoInputs.cache
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.AssemblyInfo.cs
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\refint\Utilities.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\Utilities.pdb
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\Utilities\obj\Debug\net5.0\ref\Utilities.dll

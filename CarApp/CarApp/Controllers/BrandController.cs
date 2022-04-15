@@ -29,9 +29,9 @@ namespace CarApp.Controllers
             int id = Extention.TryParseMethod();           
             Extention.Print(ConsoleColor.DarkCyan, "Model id: ");
             int id1 = Extention.TryParseMethod();
-            //ModelController ModelController = new ModelController();
+            ModelController modelController = new ModelController();
 
-            //BrandService.CreateBrandModels(ModelController.GetModel(id1), id);
+            _brandService.CreatModelIntoBrand(modelController.GetModel(id1), id);
 
         }
 
@@ -46,25 +46,25 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "Brand id: ");
             int id = Extention.TryParseMethod();
-            
-            //ModelController ModelController = new ModelController();
-            //Model Model = ModelController.CreatModel();
 
-            //BrandService.CreateBrandModels(Model, id);
+            ModelController modelController = new ModelController();
+            Model model = modelController.CreatModelinBrand();
+
+            _brandService.CreatModelIntoBrand(model, id);
 
         }
 
         public void CreateBrand()
         {
 
-            Extention.Print(ConsoleColor.DarkCyan, "Brand Name: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
             string name = Extention.TryEmptyMethod();            
 
             Brand brand = new Brand()
             {
                 Name = name,                
             };
-           
+            Console.Clear();
             _brandService.Create(brand);
             Extention.Print(ConsoleColor.Green, $"{brand.Name} created");
 
@@ -92,9 +92,12 @@ namespace CarApp.Controllers
         }
         public void GetAllBrand()
         {
+            Console.Clear();
             foreach (var item in _brandService.GetAll())
             {
-                Extention.Print(ConsoleColor.Green, $"{item.Name}");
+                Extention.Print(ConsoleColor.Green, $"Brand Id: {item.Id}\n" +
+                    $"Brand name: {item.Name}\n" +
+                    $"");
             }
         }
         public void GetBrand()

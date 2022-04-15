@@ -14,3 +14,12 @@ C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\obj\Debug\net5.0\refint\CarAp
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\obj\Debug\net5.0\CarApp.pdb
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\obj\Debug\net5.0\CarApp.genruntimeconfig.cache
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\obj\Debug\net5.0\ref\CarApp.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Business.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\DataAccess.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Entities.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Utilities.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Business.pdb
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Entities.pdb
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Utilities.pdb
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\obj\Debug\net5.0\CarApp.csproj.CopyComplete
