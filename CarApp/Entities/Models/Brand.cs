@@ -12,7 +12,7 @@ namespace Entities.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public List<Model> Model { get; set; }
-
+        
         public Brand()
         {
             Model = new List<Model>();
