@@ -10,6 +10,11 @@ namespace DataAccess.Repositories
 {
     public class BrandRepository : IRepository<Brand>
     {
+        /// <summary>
+        /// Servisden gelen Brand yaratmaq ucun
+        /// </summary>
+        /// <param name="entity">servisden gelen brand</param>
+        /// <returns></returns>
         public bool Create(Brand entity)
         {
             try
@@ -23,7 +28,11 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
-
+        /// <summary>
+        /// Servisden gelen Brandslardan birin silmek ucun
+        /// </summary>
+        /// <param name="entity">servisden gelen brand</param>
+        /// <returns></returns>
         public bool Delete(Brand entity)
         {
             try
@@ -37,7 +46,11 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
-
+        /// <summary>
+        /// Servisden gelen brandlarin hamisin tapmaq ucun
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public List<Brand> GetAll(Predicate<Brand> filter = null)
         {
             try
@@ -51,7 +64,11 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
-
+        /// <summary>
+        /// Servisden gelen brandin birin tapmaq ucun
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         public Brand GetOne(Predicate<Brand> filter = null)
         {
             try
@@ -65,7 +82,11 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
-
+        /// <summary>
+        /// Servisden gelen brandin melumatlarin deyishmek ucun
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool Update(Brand entity)
         {
             try
@@ -80,6 +101,11 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
+        /// <summary>
+        /// Servisden gelen Modeli secilmis brande elave etmek ucun
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool CreateModelIntoBrand(Model entity)
         {
             try
