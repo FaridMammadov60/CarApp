@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Interfaces
 {
-    internal interface IRepository<T> where T : IEntity
+    public interface IRepository<T> where T : IEntity
     {
         bool Create(T entity);
         bool Update(T entity);
