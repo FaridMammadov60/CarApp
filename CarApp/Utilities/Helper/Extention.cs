@@ -9,7 +9,7 @@ namespace Utilities.Helper
     public static class Extention
     {
         /// <summary>
-        /// Consola message verir
+        /// Methodu çağıranda Consola reng və message verir
         /// </summary>
         /// <param name="color"></param>
         /// <param name="message"></param>
@@ -20,7 +20,7 @@ namespace Utilities.Helper
             Console.ResetColor();
         }
         /// <summary>
-        /// Consola menu qaytarır
+        /// Consola qeyd edilmiş menu çıxarır
         /// </summary>
         public static void PrintMenu()
         {
@@ -38,7 +38,7 @@ namespace Utilities.Helper
                 $"0-Quit");
         }
         /// <summary>
-        /// Menu reqemlerin enum ile formas
+        /// Menu enum-ı reqemlerin enum ile formasi
         /// </summary>
         public enum Menu
         {
@@ -55,8 +55,10 @@ namespace Utilities.Helper
             CreateModel = 10,
             ModelAddBrand = 11
         }
+        #region EmptyNullInt
         /// <summary>
-        /// Daxil edilmiş int type-ın boş ve integer olmasın yoxlayıb doğru neticeni yazmağa mecbur edir
+        /// Daxil edilmiş int type-ın boş ve integer olmasın yoxlayıb doğru neticə yazılana kimi 
+        /// consoldan rəqəm istəyir
         /// </summary>
         /// <returns></returns>
         public static int TryParseMethod()
@@ -76,7 +78,8 @@ namespace Utilities.Helper
 
         }
         /// <summary>
-        /// Daxil edilmiş string type-ın boş və null olmasın yoxlayır ve doldurmağa məcbur edir
+        /// Daxil edilmiş string type-ın boş və null olmasın yoxlayır ve
+        /// doğru neticə yazılana kimi təkrar edir
         /// </summary>
         /// <returns></returns>
         public static string TryEmptyMethod()
@@ -90,5 +93,7 @@ namespace Utilities.Helper
             }
             return num;
         }
+        #endregion
+
     }
 }

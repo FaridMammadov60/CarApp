@@ -12,10 +12,13 @@ namespace Business.Services
 {
     public class BrandService : IService<Brand>
     {
+        //Brand yaranan zaman fərqli id-də olması üçün Create methodunda count++ qeyd edilib
         public static int Count { get; set; }   
+        //yaradılmış brand-lərin sayın tapmaq və brand sıfırdısa remove update kimi methodların istifadəsinin
+        //qarşısın almaq üçün create methodunda counter ++ remove methodunda isə counter-- qeyd edilib
         public static int Counter { get; set; }
 
-        //BrandRepository-daki methodlari cagirmaq ucun istifade eedilecek
+        //BrandRepository-dəki methodları çagırmaq üçün istifade edilecək
         private BrandRepository _brandRepository;
 
         //Constructor
@@ -24,7 +27,9 @@ namespace Business.Services
             _brandRepository = new BrandRepository();
         }
         /// <summary>
-        /// Brand Controllerden gelen brandi yaratmaq ucun brandrepositoriye gonderir
+        /// Method çağrılarkın Brand isteyir və brand.id counta bərabər edir
+        /// Brand yaratmaq üçün brandrepositoriyə gonderir və
+        /// Count və counteri ++ edir
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -45,7 +50,8 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Brand Controllerden gelen brandi silmek ucun brandrepositoriye gonderir
+        /// Method çağrılarkın id isteyir və id-yə uyğun brand tapır əgər id-yə uyğun brand yoxdursa null qaytarır
+        /// Tapılmış Brandi silmək üçün brandrepositoriyə gonderir
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -70,7 +76,7 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Butun brendleri gormek ucun brand servisi cagirir
+        /// Butun brendleri geri qaytarmaq üçün brandRepositorinin getAll methodun çağırır
         /// </summary>
         /// <returns></returns>
         public List<Brand> GetAll()
@@ -86,7 +92,7 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Controllerden gelen id uzre repositoriden brandi tapir
+        /// Method çağrılarkən id istəyir və həmin id üzrə brandi geri qaytarmaq üçün brandRepository çağırır
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -103,8 +109,9 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Contollerden gelen id uzre brandi tapmaq ucun repositorini cagirir
-        /// ve controllerden gelen brandi tapilmis brande menimsedir
+        /// Methodu çağırarkən Brand və id istəyir və id üzrə brandRepositor.getOne methodun çağırır
+        /// əgər id-yə uyğun brand yoxdursa null qaytarır
+        /// Tapılmış brandə yeni melumatlar mənimsədilir və update üçün branrepositoryə göndərilir        
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="id"></param>

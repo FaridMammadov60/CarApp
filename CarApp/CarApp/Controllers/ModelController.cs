@@ -18,16 +18,16 @@ namespace CarApp.Controllers
         }
         public Model CreatModelinBrand()
         {
-            Extention.Print(ConsoleColor.DarkCyan, "Model Name: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Name: ");
             string name = Extention.TryEmptyMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Color: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Color: ");
             string color = Extention.TryEmptyMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Production: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Production: ");
             int production = Extention.TryParseMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Mph: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Mph: ");
             int mph = Extention.TryParseMethod();
             //baxilmali
-            Extention.Print(ConsoleColor.DarkCyan, "Model Price: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Price: ");
             int price = Extention.TryParseMethod();
 
             Model model = new Model()
@@ -45,16 +45,16 @@ namespace CarApp.Controllers
         }
         public void ModelCreat()
         {
-            Extention.Print(ConsoleColor.DarkCyan, "Model Name: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Name: ");
             string name = Extention.TryEmptyMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Color: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Color: ");
             string color = Extention.TryEmptyMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Production: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Production: ");
             int production = Extention.TryParseMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Mph: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Mph: ");
             int mph = Extention.TryParseMethod();
             //baxilmali
-            Extention.Print(ConsoleColor.DarkCyan, "Model Price: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Price: ");
             int price = Extention.TryParseMethod();
 
             Model model = new Model()
@@ -75,10 +75,10 @@ namespace CarApp.Controllers
             foreach (var item in _modelService.GetAll())
             {
                 Extention.Print(ConsoleColor.Green, $"Model name: {item.Name}\n" +
-                    $"Model price: {item.Price}\n" +
+                    $"Model price: {item.Price}$\n" +
                     $"Model production: {item.Production}\n" +
                     $"Model color: {item.Color}\n" +
-                    $"Model MPH: {item.Mph}");
+                    $"Model MPH: {item.Mph}mph");
             }
         }
         public void UpdateModel()
@@ -88,18 +88,18 @@ namespace CarApp.Controllers
                 Extention.Print(ConsoleColor.Red, "Model not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Model Id: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Id: ");
             int id = Extention.TryParseMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Name: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Name: ");
             string name = Extention.TryEmptyMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Color: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Color: ");
             string color = Extention.TryEmptyMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Production: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Production: ");
             int production = Extention.TryParseMethod();
-            Extention.Print(ConsoleColor.DarkCyan, "Model Mph: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Mph: ");
             int mph = Extention.TryParseMethod();
             //baxilmali
-            Extention.Print(ConsoleColor.DarkCyan, "Model Price: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Price: ");
             int price = Extention.TryParseMethod();
 
             Model model = new Model()
@@ -133,8 +133,7 @@ namespace CarApp.Controllers
             {
                 Extention.Print(ConsoleColor.Red, "Model not available");
                 return null;
-            }
-            Extention.Print(ConsoleColor.Green, "Group Name");
+            }            
             return _modelService.GetOne(id);
 
         }

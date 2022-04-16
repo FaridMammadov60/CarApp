@@ -2,16 +2,13 @@
 using Entities.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
     public class BrandRepository : IRepository<Brand>
     {
         /// <summary>
-        /// Servisden gelen Brand yaratmaq ucun
+        /// Method çağrılarkən Brand istəyir və DataContext-dəki Brands listində Brand yaradır və ya əlavə edir
         /// </summary>
         /// <param name="entity">servisden gelen brand</param>
         /// <returns></returns>
@@ -29,7 +26,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Servisden gelen Brandslardan birin silmek ucun
+        /// Method çağrılarkən Brand istəyir və DataContext-dəki Brands listindəki seçilmiş brand-i silir
         /// </summary>
         /// <param name="entity">servisden gelen brand</param>
         /// <returns></returns>
@@ -47,7 +44,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Servisden gelen brandlarin hamisin tapmaq ucun
+        /// DataContext-dəki Brands listinin hamısın geri qaytarır
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
@@ -65,7 +62,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Servisden gelen brandin birin tapmaq ucun
+        /// DataContext-dəki Brands listindəki bir brandi geri qaytarır
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
@@ -73,7 +70,7 @@ namespace DataAccess.Repositories
         {
             try
             {
-                return filter == null? null:
+                return filter == null ? null :
                     DataContext.Brands.Find(filter);
             }
             catch (Exception)
@@ -83,7 +80,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Servisden gelen brandin melumatlarin deyishmek ucun
+        /// Method çağrılarkən Brand istəyir və DataContext-dəki Brands listindəki seçilmiş brand-in məlumatların dəyişir
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
@@ -102,7 +99,8 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Servisden gelen Modeli secilmis brande elave etmek ucun
+        /// Method çağrılarkən Model istəyir və DataContext-dəki Brands listindəki 
+        /// Modelin brandİd-si ilə Brands listedki brand id uyğunlaşdırır və  Modeli Brandə əlavə edir
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>

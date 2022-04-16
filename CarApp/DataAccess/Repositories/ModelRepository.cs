@@ -2,16 +2,13 @@
 using Entities.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
     public class ModelRepository : IRepository<Model>
     {
         /// <summary>
-        /// Servisden gelen modeli yaratmaq ucun
+        /// Method çağrılarkən Model istəyir və DataContext-dəki Models listində Model yaradır və ya əlavə edir
         /// </summary>
         /// <param name="entity">Servisden gelen model</param>
         /// <returns></returns>
@@ -29,7 +26,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// servisden gelen modeli modellerden silmek ucun
+        /// Method çağrılarkən Model istəyir və DataContext-dəki Models listindəki seçilmiş modeli-i silir
         /// </summary>
         /// <param name="entity">Servisden gelen model</param>
         /// <returns></returns>
@@ -47,7 +44,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Butun modelleri tapmaq ucun
+        /// DataContext-dəki Models listinin hamısın geri qaytarır
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
@@ -55,7 +52,7 @@ namespace DataAccess.Repositories
         {
             try
             {
-                return filter==null?null:
+                return filter == null ? DataContext.Models :
                     DataContext.Models.FindAll(filter);
             }
             catch (Exception)
@@ -65,7 +62,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Modellerden birin tapmaq ucun
+        /// DataContext-dəki Models listindəki bir modeli geri qaytarır
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
@@ -83,7 +80,7 @@ namespace DataAccess.Repositories
             }
         }
         /// <summary>
-        /// Servisden gelen modeli deyismek ucun
+        /// Method çağrılarkən Model istəyir və DataContext-dəki Models listindəki seçilmiş model-in məlumatların dəyişir
         /// </summary>
         /// <param name="entity">Servisden gelen model</param>
         /// <returns></returns>

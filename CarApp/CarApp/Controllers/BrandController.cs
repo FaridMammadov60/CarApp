@@ -1,10 +1,6 @@
 ﻿using Business.Services;
 using Entities.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities.Helper;
 
 namespace CarApp.Controllers
@@ -17,17 +13,20 @@ namespace CarApp.Controllers
         {
             _brandService = new BrandService();
         }
+        /// <summary>
+        /// Brand id və model id seçilir seçilmiş modeli brandin içinə daxil edirik.
+        /// </summary>
         public void ModelAddBrand()
         {
-
+            Console.Clear();
             if (BrandService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "Brand not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Brand id: ");
-            int id = Extention.TryParseMethod();           
-            Extention.Print(ConsoleColor.DarkCyan, "Model id: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand id: ");
+            int id = Extention.TryParseMethod();
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model id: ");
             int id1 = Extention.TryParseMethod();
             ModelController modelController = new ModelController();
 
@@ -35,7 +34,9 @@ namespace CarApp.Controllers
 
         }
 
-
+        /// <summary>
+        /// Brand İD seçilir və həmin brandin içindən yeni model yaradılır
+        /// </summary>
         public void AddModelInBrand()
         {
 
@@ -44,7 +45,7 @@ namespace CarApp.Controllers
                 Extention.Print(ConsoleColor.Red, "Brand not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Brand id: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand id: ");
             int id = Extention.TryParseMethod();
 
             ModelController modelController = new ModelController();
@@ -58,11 +59,11 @@ namespace CarApp.Controllers
         {
 
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
-            string name = Extention.TryEmptyMethod();            
+            string name = Extention.TryEmptyMethod();
 
             Brand brand = new Brand()
             {
-                Name = name,                
+                Name = name,
             };
             Console.Clear();
             _brandService.Create(brand);
@@ -72,21 +73,22 @@ namespace CarApp.Controllers
 
         public void UpdateBrand()
         {
+            Console.Clear();
             if (BrandService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "Brand not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Brand ID: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand ID: ");
             int id = Extention.TryParseMethod();
             _brandService.GetOne(id);
-            Extention.Print(ConsoleColor.DarkCyan, "Brand Name: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
             string name = Extention.TryEmptyMethod();
-            
+
 
             Brand brand = new Brand()
             {
-                Name = name,              
+                Name = name,
             };
             _brandService.Update(brand, id);
         }
@@ -107,24 +109,27 @@ namespace CarApp.Controllers
                 Extention.Print(ConsoleColor.Red, "Brand not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Brand ID: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand ID: ");
             int id = Extention.TryParseMethod();
-            Extention.Print(ConsoleColor.Green, "Brand Name");
-            Extention.Print(ConsoleColor.Green, $"{_brandService.GetOne(id).Name}");
-           
+            Console.Clear();
+            Extention.Print(ConsoleColor.Green, $"Brand Name: {_brandService.GetOne(id).Name}");
+
+
             foreach (var item in _brandService.GetOne(id).Model)
-            {               
+            {
                 Extention.Print(ConsoleColor.Green, $"Model name: {item.Name}\n" +
-                    $"Model price: {item.Price}\n" +
+                    $"Model price: {item.Price}$\n" +
                     $"Model production: {item.Production}\n" +
                     $"Model color: {item.Color}\n" +
-                    $"Model MPH: {item.Mph}");
+                    $"Model MPH: {item.Mph}mph\n" +
+                    $"");
             }
 
         }
 
         public void RemoveBrand()
         {
+            Console.Clear();
             if (BrandService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "Brand not available");

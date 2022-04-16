@@ -9,12 +9,18 @@ namespace DataAccess
 {
     public class DataContext
     {
-        public static List<Brand> Brands { get; set; }  
+        #region Properties
+        public static List<Brand> Brands { get; set; }
         public static List<Model> Models { get; set; }
+        #endregion
+
+        #region Constructor
         static DataContext()
         {
             Brands = new List<Brand>();
             Models = new List<Model>();
         }
+        #endregion
+
     }
 }
