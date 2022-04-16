@@ -24,6 +24,7 @@ namespace CarApp.Controllers
         /// <returns></returns>
         public Model CreatModelinBrand()
         {
+            Console.Clear();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Name: ");
             string name = Extention.TryEmptyMethod();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Color: ");
@@ -53,6 +54,7 @@ namespace CarApp.Controllers
         /// </summary>
         public void ModelCreat()
         {
+            Console.Clear();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Name: ");
             string name = Extention.TryEmptyMethod();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Color: ");
@@ -129,12 +131,13 @@ namespace CarApp.Controllers
         /// </summary>
         public void RemoveModel()
         {
+            Console.Clear();
             if (ModelService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "Model not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Model Id: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Id: ");
             int id = Extention.TryParseMethod();
             Model Model = _modelService.Delete(id);
             Extention.Print(ConsoleColor.Green, $"{Model.Name}");
@@ -146,6 +149,7 @@ namespace CarApp.Controllers
         /// <returns></returns>
         public Model GetModel(int id)
         {
+            Console.Clear();
             if (ModelService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "Model not available");

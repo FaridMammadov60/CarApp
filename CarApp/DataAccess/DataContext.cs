@@ -12,6 +12,7 @@ namespace DataAccess
         #region Properties
         public static List<Brand> Brands { get; set; }
         public static List<Model> Models { get; set; }
+        public static List<AvtoSalon> AvtoSalons { get; set; }
         #endregion
 
         #region Constructor
@@ -19,6 +20,7 @@ namespace DataAccess
         {
             Brands = new List<Brand>();
             Models = new List<Model>();
+            AvtoSalons = new List<AvtoSalon>();
         }
         #endregion
 
