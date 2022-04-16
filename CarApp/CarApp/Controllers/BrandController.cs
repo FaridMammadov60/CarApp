@@ -15,6 +15,7 @@ namespace CarApp.Controllers
             _brandService = new BrandService();
         }
         /// <summary>
+        /// Var olan modeli var olan Brandin içində olan listə əlavə edirik
         /// Brand id və model id seçilir seçilmiş modeli brandin içinə daxil edilir.
         /// </summary>
         public void ModelAddBrand()

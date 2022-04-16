@@ -166,5 +166,21 @@ namespace Business.Services
                 throw;
             }
         }
+        /// <summary>
+        /// Brandin içindəki modeli silir
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public Brand RemoveModelInBrand(Model model)
+        {
+            Brand isExist = _brandRepository.GetOne(g => g.Id == model.BrandId);
+            if (isExist == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return null;
+            }
+            _brandRepository.DeleteModel(isExist, model);
+            return isExist;
+        }
     }
 }
