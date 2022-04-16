@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Utilities.Helper
 {
@@ -35,6 +31,12 @@ namespace Utilities.Helper
                 $"9-GetAll Model\n" +
                 $"10-Create Model\n" +
                 $"11-Model Added Brand\n" +
+                $"12-Create Avto Salon\n" +
+                $"13-Update Avto Salon\n" +
+                $"14-Remove Avto Salon\n" +
+                $"15-Get Avto Salon\n" +
+                $"16-GetAll Avto Salon\n" +
+                $"17-Model Added Avto Salon\n" +
                 $"0-Quit");
         }
         /// <summary>
@@ -53,7 +55,13 @@ namespace Utilities.Helper
             RemoveModel = 8,
             GetAllModel = 9,
             CreateModel = 10,
-            ModelAddBrand = 11
+            ModelAddBrand = 11,
+            CreateAvtoSalon = 12,
+            UpdateAvtoSalon = 13,
+            RemoveAvtoSalon = 14,
+            GetAvtoSalon = 15,
+            GetAllAvtoSalon = 16,
+            ModelAddedAvtoSalon = 17
         }
         #region EmptyNullInt
         /// <summary>

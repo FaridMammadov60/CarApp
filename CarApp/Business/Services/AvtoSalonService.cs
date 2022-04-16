@@ -3,9 +3,6 @@ using DataAccess.Repositories;
 using Entities.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Utilities.Helper;
 
 namespace Business.Services
@@ -23,7 +20,7 @@ namespace Business.Services
 
         public AvtoSalonService()
         {
-            _avtoSalonRepository=new AvtoSalonRepository();
+            _avtoSalonRepository = new AvtoSalonRepository();
         }
         /// <summary>
         /// Method çağrılarkın Avtosalon isteyir və avtosalon.id counta bərabər edir
@@ -100,6 +97,23 @@ namespace Business.Services
             try
             {
                 return _avtoSalonRepository.GetOne(g => g.Id == id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        /// <summary>
+        /// Method çağrılarkən string name istəyir və həmin name üzrə avtosalonu geri qaytarmaq üçün avtoSalonRepository çağırir
+        /// </summary>
+        /// <param name="string"></param>
+        /// <returns></returns>
+        public AvtoSalon GetOne(string name)
+        {
+            try
+            {
+                return _avtoSalonRepository.GetOne(g => g.Name == name);
             }
             catch (Exception)
             {

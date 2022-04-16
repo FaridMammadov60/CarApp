@@ -11,12 +11,12 @@ namespace Entities.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Brand> Brand { get; set; }
+        public List<Model> Model { get; set; }
 
         #region MyRegion
         public AvtoSalon()
         {
-            Brand = new List<Brand>();
+            Model = new List<Model>();
         }
         #endregion
 

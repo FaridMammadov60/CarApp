@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sYWpZiotVLm92PJQqzy7Wc7/oO0mtvbnlvT8mjDXCNqNKeRRJ+3fABKwm0kmfSK+srivTOHAmdxgFNXsteB0ig==",
+  "dgSpecHash": "R93CiAlqPKln+s4xvJmeBC2T28MQLQDjFOXjeDLANDYQP2dEhJn8L2xvs8HkRQyT0uG6+s52cF/kHHi3ajYjKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\CarApp\\CarApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\farid\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
+  ],
   "logs": []
 }

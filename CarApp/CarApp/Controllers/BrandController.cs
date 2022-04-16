@@ -61,7 +61,7 @@ namespace CarApp.Controllers
         /// </summary>
         public void CreateBrand()
         {
-
+            Console.Clear();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
             string name = Extention.TryEmptyMethod();
 
@@ -69,7 +69,12 @@ namespace CarApp.Controllers
             {
                 Name = name,
             };
-            Console.Clear();
+            if (_brandService.GetOne(name)!=null)
+            {
+                Extention.Print(ConsoleColor.Red, "This brand already exists");
+                return;
+            }            
+            
             _brandService.Create(brand);
             Extention.Print(ConsoleColor.Green, $"{brand.Name} created");
 

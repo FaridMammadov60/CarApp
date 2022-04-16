@@ -11,12 +11,13 @@ namespace CarApp
             Extention.Print(ConsoleColor.Green, "Welcome");
             BrandController brandController = new BrandController();
             ModelController modelController = new ModelController();
+            AvtoSalonController avtoSalonController = new AvtoSalonController();
             while (true)
             {
 
             Menu: Extention.PrintMenu();
                 int input = Extention.TryParseMethod();
-                if (input >= 0 && input <= 11)
+                if (input >= 0 && input <= 17)
                 {
                     switch (input)
                     {
@@ -54,6 +55,21 @@ namespace CarApp
                             break;
                         case (int)Extention.Menu.ModelAddBrand:
                             brandController.ModelAddBrand();
+                            break;
+                        case (int)Extention.Menu.CreateAvtoSalon:
+                            avtoSalonController.CreateAvtoSalon();
+                            break;
+                        case (int)Extention.Menu.UpdateAvtoSalon:
+                            avtoSalonController.UpdateAvtoSalon();
+                            break;
+                        case (int)Extention.Menu.RemoveAvtoSalon:
+                            avtoSalonController.RemoveAvtoSalon();
+                            break;
+                        case (int)Extention.Menu.GetAvtoSalon:
+                            avtoSalonController.GetAvtoSalon();
+                            break;
+                        case (int)Extention.Menu.GetAllAvtoSalon:
+                            avtoSalonController.GetAllAvtoSalon();
                             break;
                         default:
                             goto Menu;

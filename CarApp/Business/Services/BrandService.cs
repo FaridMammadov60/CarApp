@@ -109,6 +109,23 @@ namespace Business.Services
             }
         }
         /// <summary>
+        /// Method çağrılarkən stringden name istəyir və həmin name üzrə brandi geri qaytarmaq üçün brandRepository çağırır
+        /// </summary>
+        /// <param name="string"></param>
+        /// <returns></returns>
+        public Brand GetOne(string name)
+        {
+            try
+            {
+                return _brandRepository.GetOne(g => g.Name == name);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        /// <summary>
         /// Methodu çağırarkən Brand və id istəyir və id üzrə brandRepositor.getOne methodun çağırır
         /// əgər id-yə uyğun brand yoxdursa null qaytarır
         /// Tapılmış brandə yeni məlumatlar mənimsədilir və update üçün branrepositoryə göndərilir        
