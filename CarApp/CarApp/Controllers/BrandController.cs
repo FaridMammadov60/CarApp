@@ -7,14 +7,15 @@ namespace CarApp.Controllers
 {
     internal class BrandController
     {
+        //branServisde olan methodlari cağırmaq üçün istifadə ediləcək
         private BrandService _brandService;
-
+        //Consturctor
         public BrandController()
         {
             _brandService = new BrandService();
         }
         /// <summary>
-        /// Brand id və model id seçilir seçilmiş modeli brandin içinə daxil edirik.
+        /// Brand id və model id seçilir seçilmiş modeli brandin içinə daxil edilir.
         /// </summary>
         public void ModelAddBrand()
         {
@@ -54,7 +55,9 @@ namespace CarApp.Controllers
             _brandService.CreatModelIntoBrand(model, id);
 
         }
-
+        /// <summary>
+        /// Brand yaratmaq üçün melumatlar daxil edib brandServise gönderirik
+        /// </summary>
         public void CreateBrand()
         {
 
@@ -70,7 +73,9 @@ namespace CarApp.Controllers
             Extention.Print(ConsoleColor.Green, $"{brand.Name} created");
 
         }
-
+        /// <summary>
+        /// Branddə olan məlumatları yeniləyib brand servisə göndəririk
+        /// </summary>
         public void UpdateBrand()
         {
             Console.Clear();
@@ -92,6 +97,9 @@ namespace CarApp.Controllers
             };
             _brandService.Update(brand, id);
         }
+        /// <summary>
+        /// Bütün brandlari göstərmək üçün istifadə edirik
+        /// </summary>
         public void GetAllBrand()
         {
             Console.Clear();
@@ -102,6 +110,9 @@ namespace CarApp.Controllers
                     $"");
             }
         }
+        /// <summary>
+        ///  Daxil edilmiş id-yə uyğun brandi və branddəki bütün məlumatları consola çıxardırıq
+        /// </summary>
         public void GetBrand()
         {
             if (BrandService.Counter <= 0)
@@ -126,7 +137,9 @@ namespace CarApp.Controllers
             }
 
         }
-
+        /// <summary>
+        /// Daxil edilmiş id-yə uyğun brandi silirik
+        /// </summary>
         public void RemoveBrand()
         {
             Console.Clear();

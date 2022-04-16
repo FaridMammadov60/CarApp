@@ -111,7 +111,7 @@ namespace Business.Services
         /// <summary>
         /// Methodu çağırarkən Brand və id istəyir və id üzrə brandRepositor.getOne methodun çağırır
         /// əgər id-yə uyğun brand yoxdursa null qaytarır
-        /// Tapılmış brandə yeni melumatlar mənimsədilir və update üçün branrepositoryə göndərilir        
+        /// Tapılmış brandə yeni məlumatlar mənimsədilir və update üçün branrepositoryə göndərilir        
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="id"></param>
@@ -138,10 +138,11 @@ namespace Business.Services
         }
 
         /// <summary>
-        /// Controllerden daxil olan id uzre brandi tapib
-        /// modeli brande elave etmek ucun repositoriden method cagiririq
-        /// modeldeki brendId = edirik id-ye
-        /// </summary>
+        /// Method çağrılarkənModel və id istəyir
+        /// daxil olan id uzre brandi tapir əgər brand yoxdursa geriyə null qaytarır
+        /// modeldeki brendId = edir id-ye
+        /// modeli brandə əlavə etmək üçün brandaRepositoriyə gondəriri
+        /// /// </summary>
         /// <param name="model"></param>
         /// <param name="id"></param>
         /// <returns></returns>

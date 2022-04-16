@@ -12,7 +12,10 @@ namespace Business.Services
 {
     public class ModelService:IService<Model>
     {
+        //Model yaranan zaman fərqli id-də olması üçün Create methodunda count++ qeyd edilib
         public static int Count { get; set; }
+        //yaradılmış model-lərin sayın tapmaq və model sıfırdısa remove update kimi methodların istifadəsinin
+        //qarşısın almaq üçün create methodunda counter ++ remove methodunda isə counter-- qeyd edilib
         public static int Counter { get; set; }
 
         //ModelRepository-daki methodlari cagirmaq ucun istifade eedilecek
@@ -23,6 +26,13 @@ namespace Business.Services
         {
             _modelRepository = new ModelRepository();
         }
+        /// <summary>
+        /// Method çağrılarkın Model isteyir və model.id counta bərabər edir
+        /// Model yaratmaq üçün modelepositoriyə gonderir və
+        /// Count və counteri ++ edir
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public Model Create(Model entity)
         {
             try
@@ -40,7 +50,8 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Model Controllerden gelen Modeli silmek ucun Modelrepositoriye gonderir
+        /// Method çağrılarkın id isteyir və id-yə uyğun modeli tapır əgər id-yə uyğun model yoxdursa null qaytarır
+        /// Tapılmış modeli silmək üçün modelrepositoriyə gonderir
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -55,7 +66,7 @@ namespace Business.Services
                     return null;
                 }
                 _modelRepository.Delete(isExist);
-                if (isExist.BrandId==null)
+                if (isExist.BrandId!=null)
                 {
                     //baxilmali
                 }
@@ -70,7 +81,7 @@ namespace Business.Services
         }
 
         /// <summary>
-        /// Butun brendleri gormek ucun Model servisi cagirir
+        /// Butun modelləri geri qaytarmaq üçün modelRepositorinin getAll methodun çağırır
         /// </summary>
         /// <returns></returns>
         public List<Model> GetAll()
@@ -86,7 +97,7 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Controllerden gelen id uzre repositoriden Modeli tapir
+        /// Method çağrılarkən id istəyir və həmin id üzrə modeli geri qaytarmaq üçün modelRepository çağırır
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -103,8 +114,9 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Contollerden gelen id uzre Modeli tapmaq ucun repositorini cagirir
-        /// ve controllerden gelen Modeli tapilmis Modele menimsedir
+        /// Methodu çağırarkən Model və id istəyir və id üzrə modelRepositor.getOne methodun çağırır
+        /// əgər id-yə uyğun brand yoxdursa null qaytarır
+        /// Tapılmış modelə yeni məlumatlar mənimsədilir və update üçün modelrepositoryə göndərilir 
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="id"></param>
