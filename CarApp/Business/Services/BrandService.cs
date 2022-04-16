@@ -166,11 +166,15 @@ namespace Business.Services
                 throw;
             }
         }
+<<<<<<< HEAD
         /// <summary>
         /// Brandin içindəki modeli silir
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+=======
+
+>>>>>>> ab2cc256afcc6fee2681bb96e54deda756e1c0e9
         public Brand RemoveModelInBrand(Model model)
         {
             Brand isExist = _brandRepository.GetOne(g => g.Id == model.BrandId);
