@@ -52,6 +52,7 @@ namespace Business.Services
         /// <summary>
         /// Method çağrılarkın id isteyir və id-yə uyğun modeli tapır əgər id-yə uyğun model yoxdursa null qaytarır
         /// Tapılmış modeli silmək üçün modelrepositoriyə gonderir
+        /// Əgər modelin brand id-si varsa brandin icinde olan modelid' silir
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -65,11 +66,12 @@ namespace Business.Services
                     Extention.Print(ConsoleColor.Red, "Id does not exist");
                     return null;
                 }
-                _modelRepository.Delete(isExist);
-                if (isExist.BrandId!=null)
+                if (isExist.BrandId != null)
                 {
-                    //baxilmali
+                    BrandService brandService = new BrandService();
+                    brandService.RemoveModelInBrand(isExist);
                 }
+                _modelRepository.Delete(isExist);
                 Counter--;
                 return isExist;
             }

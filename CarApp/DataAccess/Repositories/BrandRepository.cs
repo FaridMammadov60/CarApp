@@ -119,5 +119,25 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
+
+        public bool DeleteModel(Brand brand, Model model)
+        {
+            try
+            {
+                foreach (var item in DataContext.Brands)
+                {
+                    if (brand.Id==model.BrandId)
+                    {
+                        item.Model.Remove(model);
+                    }                    
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace DataAccess.Repositories
         {
             try
             {
-                DataContext.Models.Add(entity);
+                DataContext.Models.Remove(entity);
                 return false;
             }
             catch (Exception)
