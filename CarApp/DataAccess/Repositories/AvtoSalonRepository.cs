@@ -114,7 +114,7 @@ namespace DataAccess.Repositories
         {
             try
             {
-                List<AvtoSalon> isExist = DataContext.AvtoSalons.FindAll(s => s.Id == entity.AvtoSalonId);
+               List<AvtoSalon> isExist = DataContext.AvtoSalons.FindAll(s => s.Id == entity.AvtoSalonId);
                 AvtoSalon avto = DataContext.AvtoSalons.Find(f => f.Id == entity.AvtoSalonId);
                 avto.Model.Add(entity);
                 return true;

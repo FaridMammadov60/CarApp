@@ -49,6 +49,7 @@ namespace Utilities.Helper
                 $"18-Show Database\n" +
                 $"19-Save to Database\n" +
                 $"20-Remove to Database\n" +
+                $"\n" +
                 $"0-Quit");
         }
         /// <summary>

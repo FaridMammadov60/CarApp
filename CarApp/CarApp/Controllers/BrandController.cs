@@ -36,6 +36,14 @@ namespace CarApp.Controllers
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model id: ");
             int id1 = Extention.TryParseMethod();
             ModelController modelController = new ModelController();
+            foreach (var item in _brandService.GetOne(id).Model)
+            {
+                if (modelController.GetModel(id).Id == item.Id)
+                {
+                    Extention.Print(ConsoleColor.Red, "This Model already exists");
+                    return;
+                }
+            }
 
             _brandService.CreatModelIntoBrand(modelController.GetModel(id1), id);
 
