@@ -120,5 +120,24 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
+        public bool DeleteModel(AvtoSalon brand, Model model)
+        {
+            try
+            {
+                foreach (var item in DataContext.AvtoSalons)
+                {
+                    if (brand.Id == model.AvtoSalonId)
+                    {
+                        item.Model.Remove(model);
+                    }
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -191,14 +191,22 @@ namespace Business.Services
 
         public Brand RemoveModelInBrand(Model model)
         {
-            Brand isExist = _brandRepository.GetOne(g => g.Id == model.BrandId);
-            if (isExist == null)
+            try
             {
-                Extention.Print(ConsoleColor.Red, "Id does not exist");
-                return null;
+                Brand isExist = _brandRepository.GetOne(g => g.Id == model.BrandId);
+                if (isExist == null)
+                {
+                    Extention.Print(ConsoleColor.Red, "Id does not exist");
+                    return null;
+                }
+                _brandRepository.DeleteModel(isExist, model);
+                return isExist;
             }
-            _brandRepository.DeleteModel(isExist, model);
-            return isExist;
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Business.Services
     {
         //Brand yaranan zaman fərqli id-də olması üçün Create methodunda count++ qeyd edilib
         public static int Count { get; set; }
-        //yaradılmış brand-lərin sayın tapmaq və brand sıfırdısa remove update kimi methodların istifadəsinin
+        //yaradılmış avtosalon-larin sayın tapmaq və avtosalon sıfırdısa remove update kimi methodların istifadəsinin
         //qarşısın almaq üçün create methodunda counter ++ remove methodunda isə counter-- qeyd edilib
         public static int Counter { get; set; }
 
@@ -46,7 +46,7 @@ namespace Business.Services
             }
         }
         /// <summary>
-        /// Method çağrılarkın id isteyir və id-yə uyğun avtosalon tapır əgər id-yə uyğun brand yoxdursa null qaytarır
+        /// Method çağrılarkın id isteyir və id-yə uyğun avtosalon tapır əgər id-yə uyğun avtosalon yoxdursa null qaytarır
         /// Tapılmış Avtosalon silmək üçün avtoSalonrepositoriyə gonderir
         /// </summary>
         /// <param name="id"></param>
@@ -154,15 +154,42 @@ namespace Business.Services
         {
             try
             {
-                AvtoSalon avto = _avtoSalonRepository.GetOne(g => g.Id == id);;
+                AvtoSalon avto = _avtoSalonRepository.GetOne(g => g.Id == id);
+                
                 if (avto == null)
                 {
                     Extention.Print(ConsoleColor.Red, "Id does not exist");
                     return null;
                 }
+                else if (avto.Size<=avto.CarCount)
+                {
+                    Extention.Print(ConsoleColor.Red, "Limit");
+                    return null;
+                }
+                avto.CarCount++;
                 model.AvtoSalonId = id;
                 _avtoSalonRepository.CreateModelIntoAvtoSalon(model);
                 return avto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public AvtoSalon RemoveModelInAvtoSalon(Model model)
+        {
+            try
+            {
+                AvtoSalon isExist = _avtoSalonRepository.GetOne(g => g.Id == model.AvtoSalonId);
+                if (isExist == null)
+                {
+                    Extention.Print(ConsoleColor.Red, "Id does not exist");
+                    return null;
+                }
+                _avtoSalonRepository.DeleteModel(isExist, model);
+                return isExist;
             }
             catch (Exception)
             {

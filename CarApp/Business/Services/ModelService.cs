@@ -71,6 +71,11 @@ namespace Business.Services
                     BrandService brandService = new BrandService();
                     brandService.RemoveModelInBrand(isExist);
                 }
+                if (isExist.AvtoSalonId != null)
+                {
+                    AvtoSalonService avtoSalonService = new AvtoSalonService();
+                    avtoSalonService.RemoveModelInAvtoSalon(isExist);
+                }
                 _modelRepository.Delete(isExist);
                 Counter--;
                 return isExist;

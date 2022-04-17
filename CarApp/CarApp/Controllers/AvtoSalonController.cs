@@ -27,10 +27,14 @@ namespace CarApp.Controllers
             Console.Clear();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Avto Salon Name: ");
             string name = Extention.TryEmptyMethod();
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Avto Salon Size: ");
+            int size = Extention.TryParseMethod();
 
             AvtoSalon avtoSalon = new AvtoSalon()
             {
                 Name = name,
+                Size = size
+                
             };
             if (_avtoSalonService.GetOne(name) != null)
             {
@@ -80,8 +84,10 @@ namespace CarApp.Controllers
             Console.Clear();
             foreach (var item in _avtoSalonService.GetAll())
             {
-                Extention.Print(ConsoleColor.Green, $"Brand Id: {item.Id}\n" +
-                    $"Brand name: {item.Name}\n" +
+                Extention.Print(ConsoleColor.Green, $"Avtosalon Id: {item.Id}\n" +
+                    $"Avtosalon name: {item.Name}\n" +
+                    $"Avtosalon size: {item.Size}\n" +
+                    $"Avtosalon count: {item.CarCount} \n" +
                     $"");
             }
         }
@@ -104,8 +110,10 @@ namespace CarApp.Controllers
                 Extention.Print(ConsoleColor.Red, "Id does not exist");
                 return;
             }            
-            Extention.Print(ConsoleColor.Green, $"Avtosalon Name: {_avtoSalonService.GetOne(id).Name}");
-
+            Extention.Print(ConsoleColor.Green, $"Avtosalon Name: {_avtoSalonService.GetOne(id).Name}\n" +
+                $"Avtosalon Size: {_avtoSalonService.GetOne(id).Size}\n" +
+                $"Avtosalon carcount: {_avtoSalonService.GetOne(id).CarCount}");
+            
             foreach (var item in _avtoSalonService.GetOne(id).Model)
             {
                 Extention.Print(ConsoleColor.Green, $"Model name: {item.Name}\n" +
@@ -113,7 +121,7 @@ namespace CarApp.Controllers
                     $"Model production: {item.Production}\n" +
                     $"Model color: {item.Color}\n" +
                     $"Model MPH: {item.Mph}mph\n" +
-                    $"");
+                    $"");          
             }
 
         }
@@ -152,7 +160,7 @@ namespace CarApp.Controllers
             {
                 Extention.Print(ConsoleColor.Red, "Id does not exist");
                 return;
-            }
+            }            
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model id: ");
             int id1 = Extention.TryParseMethod();
             ModelController modelController = new ModelController();
