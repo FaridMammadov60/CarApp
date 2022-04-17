@@ -9,10 +9,8 @@ namespace CarApp
     {
         static void Main(string[] args)
         {
-            Extention.Print(ConsoleColor.Green, "Welcome");
-            string path = @"C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\database.json";
-            Extention.Print(ConsoleColor.DarkGreen, "DATABASE");
-            DataContext.StreamReader(path);
+            Extention.Print(ConsoleColor.Green, "-------Welcome-------");
+            string path = @"C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\database.json";            
             BrandController brandController = new BrandController();
             ModelController modelController = new ModelController();
             AvtoSalonController avtoSalonController = new AvtoSalonController();
@@ -21,17 +19,11 @@ namespace CarApp
 
             Menu: Extention.PrintMenu();
                 int input = Extention.TryParseMethod();
-                if (input >= 0 && input <= 17)
+                if (input >= 0 && input <= 20)
                 {
                     switch (input)
                     {
-                        case (int)Extention.Menu.Quit:
-                            Extention.Print(ConsoleColor.Green, "Save to 1");
-                            int a = Extention.TryParseMethod();
-                            if (a==1)
-                            {
-                                DataContext.StreamWriter(path);
-                            }                            
+                        case (int)Extention.Menu.Quit:                                                                                      
                             goto Quit;
                         case (int)Extention.Menu.CreateBrand:
                             brandController.CreateBrand();
@@ -83,6 +75,16 @@ namespace CarApp
                             break;
                         case (int)Extention.Menu.ModelAddedAvtoSalon:
                             avtoSalonController.ModelAddAvtoSalon();
+                            break;
+                        case (int)Extention.Menu.ShowDataBase:
+                            Extention.Print(ConsoleColor.Yellow, "DATABASE");
+                            DataContext.StreamReader(path);
+                            break;
+                        case (int)Extention.Menu.SaveDatabase:
+                            DataContext.StreamWriter(path);
+                            break;
+                        case (int)Extention.Menu.RemoveDatebase:
+                            DataContext.StreamRemove(path);
                             break;
                         default:
                             goto Menu;

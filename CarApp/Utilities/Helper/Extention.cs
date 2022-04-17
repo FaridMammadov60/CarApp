@@ -22,23 +22,33 @@ namespace Utilities.Helper
         /// </summary>
         public static void PrintMenu()
         {
-            Print(ConsoleColor.Cyan, $"1-Create Brand\n" +
+            Print(ConsoleColor.Cyan, $"------Brand-------\n" +
+                $"1-Create Brand\n" +
                 $"2-Update Brand\n" +
                 $"3-Remove Brand\n" +
                 $"4-Get Brand\n" +
                 $"5-GetAll Brand\n" +
                 $"6-Add Model into Brand\n" +
+                $"\n" +
+                $"------Model------\n" +
                 $"7-Update Model\n" +
                 $"8-Remove Model\n" +
                 $"9-GetAll Model\n" +
                 $"10-Create Model\n" +
                 $"11-Model Added Brand\n" +
+                $"\n" +
+                $"------Avto Salon------\n" +
                 $"12-Create Avto Salon\n" +
                 $"13-Update Avto Salon\n" +
                 $"14-Remove Avto Salon\n" +
                 $"15-Get Avto Salon\n" +
                 $"16-GetAll Avto Salon\n" +
                 $"17-Model Added Avto Salon\n" +
+                $"\n" +
+                $"------DataBase------\n" +
+                $"18-Show Database\n" +
+                $"19-Save to Database\n" +
+                $"20-Remove to Database\n" +
                 $"0-Quit");
         }
         /// <summary>
@@ -63,7 +73,10 @@ namespace Utilities.Helper
             RemoveAvtoSalon = 14,
             GetAvtoSalon = 15,
             GetAllAvtoSalon = 16,
-            ModelAddedAvtoSalon = 17
+            ModelAddedAvtoSalon = 17,
+            ShowDataBase=18,
+            SaveDatabase=19,
+            RemoveDatebase=20
         }
         #region EmptyNullInt
         /// <summary>

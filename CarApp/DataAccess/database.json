@@ -1,3 +1,3 @@
 [{"Id":0,"Name":"BMW","Model":[]}]
-[]
-[]
+[{"Id":0,"BrandId":null,"AvtoSalonId":null,"Name":"F90","Price":85000,"Production":2022,"Color":"BLUE","Mph":345},{"Id":1,"BrandId":null,"AvtoSalonId":null,"Name":"FARID CAR","Price":2345,"Production":234,"Color":"5","Mph":2345}]
+[{"Id":0,"Name":"FARIDCAR","Size":5,"CarCount":0,"Model":[]}]

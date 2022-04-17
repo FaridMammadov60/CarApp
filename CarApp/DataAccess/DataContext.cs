@@ -55,5 +55,13 @@ namespace DataAccess
             }
             
         }
+        public static void StreamRemove(string path)
+        {
+            using (StreamWriter swe = new StreamWriter(path))
+            {                
+                swe.WriteLine("");
+            }
+           
+        }
     }
 }
