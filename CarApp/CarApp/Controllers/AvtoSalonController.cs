@@ -48,19 +48,19 @@ namespace CarApp.Controllers
         public void UpdateAvtoSalon()
         {
             Console.Clear();
-            if (BrandService.Counter <= 0)
+            if (AvtoSalonService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "AvtoSalon not available");
                 return;
             }
-            
+
             Extention.Print(ConsoleColor.DarkCyan, "Enter to AvtoSalon ID: ");
             int id = Extention.TryParseMethod();
-            //if (_avtoSalonService.GetOne(id) == null)
-            //{
-            //    Extention.Print(ConsoleColor.Red, "Id does not exist");
-            //    return;
-            //}
+            if (_avtoSalonService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             _avtoSalonService.GetOne(id);
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
             string name = Extention.TryEmptyMethod();
@@ -90,16 +90,21 @@ namespace CarApp.Controllers
         /// </summary>
         public void GetAvtoSalon()
         {
-            if (BrandService.Counter <= 0)
+            Console.Clear();
+            if (AvtoSalonService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "AvtoSalon not available");
                 return;
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Enter to AvtoSalon ID: ");
-            int id = Extention.TryParseMethod();            
-            Console.Clear();
-            Extention.Print(ConsoleColor.Green, $"Brand Name: {_avtoSalonService.GetOne(id).Name}");
 
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to AvtoSalon ID: ");
+            int id = Extention.TryParseMethod();
+            if (_avtoSalonService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }            
+            Extention.Print(ConsoleColor.Green, $"Avtosalon Name: {_avtoSalonService.GetOne(id).Name}");
 
             foreach (var item in _avtoSalonService.GetOne(id).Model)
             {
@@ -118,7 +123,7 @@ namespace CarApp.Controllers
         public void RemoveAvtoSalon()
         {
             Console.Clear();
-            if (BrandService.Counter <= 0)
+            if (AvtoSalonService.Counter <= 0)
             {
                 Extention.Print(ConsoleColor.Red, "AvtoSalon not available");
                 return;
@@ -136,7 +141,7 @@ namespace CarApp.Controllers
         public void ModelAddAvtoSalon()
         {
             Console.Clear();
-            if (AvtoSalonService.Counter <= 0)
+            if (AvtoSalonService.Counter < 0)
             {
                 Extention.Print(ConsoleColor.Red, "AvtoSalon not available");
                 return;

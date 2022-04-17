@@ -76,13 +76,18 @@ namespace Utilities.Helper
         T1: string num = Console.ReadLine();
             int input;
             bool isNum = int.TryParse(num, out input);
-            if (isNum)
+            if (input < 0)
             {
+                Extention.Print(ConsoleColor.Red, "Enter the correctly");
+                goto T1;
+            }
+            else if (isNum)
+            {                
                 return input;
             }
             else
             {
-                Extention.Print(ConsoleColor.Red, "Enter the ID correctly");
+                Extention.Print(ConsoleColor.Red, "Enter the correctly");
                 goto T1;
             }
 
@@ -94,15 +99,15 @@ namespace Utilities.Helper
         /// <returns></returns>
         public static string TryEmptyMethod()
         {
-        T1: string num = Console.ReadLine();
+        T1: string word = Console.ReadLine();
 
-            if (String.IsNullOrEmpty(num))
+            if (String.IsNullOrEmpty(word))
             {
                 Extention.Print(ConsoleColor.Red, "Enter the correctly");
                 goto T1;
             }
-            num = num.ToUpper();
-            return num;
+            word = word.ToUpper();
+            return word;
         }
         public static bool CheckId()
         {
