@@ -53,8 +53,14 @@ namespace CarApp.Controllers
                 Extention.Print(ConsoleColor.Red, "AvtoSalon not available");
                 return;
             }
+            
             Extention.Print(ConsoleColor.DarkCyan, "Enter to AvtoSalon ID: ");
             int id = Extention.TryParseMethod();
+            //if (_avtoSalonService.GetOne(id) == null)
+            //{
+            //    Extention.Print(ConsoleColor.Red, "Id does not exist");
+            //    return;
+            //}
             _avtoSalonService.GetOne(id);
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
             string name = Extention.TryEmptyMethod();
@@ -90,7 +96,7 @@ namespace CarApp.Controllers
                 return;
             }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to AvtoSalon ID: ");
-            int id = Extention.TryParseMethod();
+            int id = Extention.TryParseMethod();            
             Console.Clear();
             Extention.Print(ConsoleColor.Green, $"Brand Name: {_avtoSalonService.GetOne(id).Name}");
 
@@ -119,8 +125,35 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "AvtoSalon Id: ");
             int id = Extention.TryParseMethod();
+            if (_avtoSalonService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             AvtoSalon avtoSalon = _avtoSalonService.Delete(id);
             Extention.Print(ConsoleColor.Green, $"{avtoSalon.Name}");
+        }
+        public void ModelAddAvtoSalon()
+        {
+            Console.Clear();
+            if (AvtoSalonService.Counter <= 0)
+            {
+                Extention.Print(ConsoleColor.Red, "AvtoSalon not available");
+                return;
+            }
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to AvtoSalon id: ");
+            int id = Extention.TryParseMethod();
+            if (_avtoSalonService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to Model id: ");
+            int id1 = Extention.TryParseMethod();
+            ModelController modelController = new ModelController();
+
+            _avtoSalonService.CreatModelIntoBrand(modelController.GetModel(id1), id);
+
         }
     }
 }

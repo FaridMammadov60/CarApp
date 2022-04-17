@@ -71,6 +71,9 @@ namespace CarApp
                         case (int)Extention.Menu.GetAllAvtoSalon:
                             avtoSalonController.GetAllAvtoSalon();
                             break;
+                        case (int)Extention.Menu.ModelAddedAvtoSalon:
+                            avtoSalonController.ModelAddAvtoSalon();
+                            break;
                         default:
                             goto Menu;
                     }

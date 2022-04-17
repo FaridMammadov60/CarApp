@@ -105,5 +105,20 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
+        public bool CreateModelIntoAvtoSalon(Model entity)
+        {
+            try
+            {
+                List<AvtoSalon> isExist = DataContext.AvtoSalons.FindAll(s => s.Id == entity.AvtoSalonId);
+                AvtoSalon avto = DataContext.AvtoSalons.Find(f => f.Id == entity.AvtoSalonId);
+                avto.Model.Add(entity);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

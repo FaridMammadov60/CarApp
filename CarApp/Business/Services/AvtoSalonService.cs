@@ -149,5 +149,26 @@ namespace Business.Services
                 throw;
             }
         }
+
+        public AvtoSalon CreatModelIntoBrand(Model model, int id)
+        {
+            try
+            {
+                AvtoSalon avto = _avtoSalonRepository.GetOne(g => g.Id == id);;
+                if (avto == null)
+                {
+                    Extention.Print(ConsoleColor.Red, "Id does not exist");
+                    return null;
+                }
+                model.AvtoSalonId = id;
+                _avtoSalonRepository.CreateModelIntoAvtoSalon(model);
+                return avto;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

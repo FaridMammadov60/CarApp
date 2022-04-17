@@ -1,9 +1,11 @@
 ﻿using System;
 
+
 namespace Utilities.Helper
 {
     public static class Extention
     {
+        
         /// <summary>
         /// Methodu çağıranda Consola reng və message verir
         /// </summary>
@@ -99,8 +101,16 @@ namespace Utilities.Helper
                 Extention.Print(ConsoleColor.Red, "Enter the correctly");
                 goto T1;
             }
+            num = num.ToUpper();
             return num;
         }
+        public static bool CheckId()
+        {
+
+            //baxilmali
+            return true;
+        }
+
         #endregion
 
     }

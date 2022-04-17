@@ -28,6 +28,11 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand id: ");
             int id = Extention.TryParseMethod();
+            if (_brandService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model id: ");
             int id1 = Extention.TryParseMethod();
             ModelController modelController = new ModelController();
@@ -49,7 +54,11 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand id: ");
             int id = Extention.TryParseMethod();
-
+            if (_brandService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             ModelController modelController = new ModelController();
             Model model = modelController.CreatModelinBrand();
 
@@ -63,8 +72,7 @@ namespace CarApp.Controllers
         {
             Console.Clear();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
-            string name = Extention.TryEmptyMethod();
-
+            string name = Extention.TryEmptyMethod();            
             Brand brand = new Brand()
             {
                 Name = name,
@@ -90,8 +98,14 @@ namespace CarApp.Controllers
                 Extention.Print(ConsoleColor.Red, "Brand not available");
                 return;
             }
+
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand ID: ");
             int id = Extention.TryParseMethod();
+            if (_brandService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             _brandService.GetOne(id);
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
             string name = Extention.TryEmptyMethod();
@@ -121,25 +135,40 @@ namespace CarApp.Controllers
         /// </summary>
         public void GetBrand()
         {
-            if (BrandService.Counter <= 0)
+            try
             {
-                Extention.Print(ConsoleColor.Red, "Brand not available");
-                return;
+                if (BrandService.Counter <= 0)
+                {
+                    Extention.Print(ConsoleColor.Red, "Brand not available");
+                    return;
+                }
+
+                Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand ID: ");
+                int id = Extention.TryParseMethod();
+                
+                if (_brandService.GetOne(id) == null)
+                {
+                    Extention.Print(ConsoleColor.Red, "Id does not exist");
+                    return;
+                }
+                Console.Clear();
+                Extention.Print(ConsoleColor.Green, $"Brand Name: {_brandService.GetOne(id).Name}");
+
+
+                foreach (var item in _brandService.GetOne(id).Model)
+                {
+                    Extention.Print(ConsoleColor.Green, $"Model name: {item.Name}\n" +
+                        $"Model price: {item.Price}$\n" +
+                        $"Model production: {item.Production}\n" +
+                        $"Model color: {item.Color}\n" +
+                        $"Model MPH: {item.Mph}mph\n" +
+                        $"");
+                }
             }
-            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand ID: ");
-            int id = Extention.TryParseMethod();
-            Console.Clear();
-            Extention.Print(ConsoleColor.Green, $"Brand Name: {_brandService.GetOne(id).Name}");
-
-
-            foreach (var item in _brandService.GetOne(id).Model)
+            catch (Exception)
             {
-                Extention.Print(ConsoleColor.Green, $"Model name: {item.Name}\n" +
-                    $"Model price: {item.Price}$\n" +
-                    $"Model production: {item.Production}\n" +
-                    $"Model color: {item.Color}\n" +
-                    $"Model MPH: {item.Mph}mph\n" +
-                    $"");
+
+                throw;
             }
 
         }
@@ -156,6 +185,11 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "Brand Id: ");
             int id = Extention.TryParseMethod();
+            if (_brandService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             Brand brand = _brandService.Delete(id);
             Extention.Print(ConsoleColor.Green, $"{brand.Name}");
         }

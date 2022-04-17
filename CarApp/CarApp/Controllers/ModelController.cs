@@ -104,6 +104,11 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Id: ");
             int id = Extention.TryParseMethod();
+            if (_modelService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Name: ");
             string name = Extention.TryEmptyMethod();
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Color: ");
@@ -139,6 +144,11 @@ namespace CarApp.Controllers
             }
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model Id: ");
             int id = Extention.TryParseMethod();
+            if (_modelService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return;
+            }
             Model Model = _modelService.Delete(id);
             Extention.Print(ConsoleColor.Green, $"{Model.Name}");
         }
@@ -154,7 +164,12 @@ namespace CarApp.Controllers
             {
                 Extention.Print(ConsoleColor.Red, "Model not available");
                 return null;
-            }            
+            }
+            if (_modelService.GetOne(id) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Id does not exist");
+                return null;
+            }
             return _modelService.GetOne(id);
 
         }
