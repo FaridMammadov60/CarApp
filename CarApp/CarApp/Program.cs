@@ -1,4 +1,5 @@
 ﻿using CarApp.Controllers;
+using DataAccess;
 using System;
 using Utilities.Helper;
 
@@ -9,6 +10,9 @@ namespace CarApp
         static void Main(string[] args)
         {
             Extention.Print(ConsoleColor.Green, "Welcome");
+            string path = @"C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\database.json";
+            Extention.Print(ConsoleColor.DarkGreen, "DATABASE");
+            DataContext.StreamReader(path);
             BrandController brandController = new BrandController();
             ModelController modelController = new ModelController();
             AvtoSalonController avtoSalonController = new AvtoSalonController();
@@ -22,6 +26,12 @@ namespace CarApp
                     switch (input)
                     {
                         case (int)Extention.Menu.Quit:
+                            Extention.Print(ConsoleColor.Green, "Save to 1");
+                            int a = Extention.TryParseMethod();
+                            if (a==1)
+                            {
+                                DataContext.StreamWriter(path);
+                            }                            
                             goto Quit;
                         case (int)Extention.Menu.CreateBrand:
                             brandController.CreateBrand();

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dwImvrE8t9et8KlB6HjLHmla+iT2YHZ0hc01/PRtxDwmUp1yUCKYxx/WyXAUfmuMenr0LqHaFrHW2G5+6FGogQ==",
+  "dgSpecHash": "e9XXDd+FLg+OYQZ8nszCOw0eXlJuwmdvT1jUQdyN3Tb+07aMnXugYy154gEInAe/ZdXc5T1Egqf35Hx2RI6gNg==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\CarApp\\CarApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\farid\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\farid\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
   ],
   "logs": []

@@ -149,7 +149,12 @@ namespace Business.Services
                 throw;
             }
         }
-
+        /// <summary>
+        /// Method çağrılarkəm model və id isteyir və Avtosalonda model yaratmaq ucun repositoriyə göndərir
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public AvtoSalon CreatModelIntoBrand(Model model, int id)
         {
             try
@@ -177,7 +182,11 @@ namespace Business.Services
                 throw;
             }
         }
-
+        /// <summary>
+        /// Avtosalondaki modeli tapıb silinmek ucun repositoriyə gonderir
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public AvtoSalon RemoveModelInAvtoSalon(Model model)
         {
             try
@@ -189,6 +198,7 @@ namespace Business.Services
                     return null;
                 }
                 _avtoSalonRepository.DeleteModel(isExist, model);
+                isExist.CarCount--;
                 return isExist;
             }
             catch (Exception)

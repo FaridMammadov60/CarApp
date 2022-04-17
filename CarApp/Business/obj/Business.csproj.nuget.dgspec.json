@@ -102,6 +102,9 @@
             "projectReferences": {
               "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\Entities\\Entities.csproj": {
                 "projectPath": "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\Entities\\Entities.csproj"
+              },
+              "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -115,6 +118,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

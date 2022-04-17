@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6PZ675ndMfWcE+j0UhNhlxT8osHi87lISkdNPMwpmp9WO1PQNwuyuWFuG31IZiykYa2uYjts7jTy+ueE6BDVvg==",
+  "dgSpecHash": "OQzdwEPPbqlR/n0y+OZfGY2l6UAq5gLXNtKYE0zkU4Y79ukuoKVfIogMvoLSjgX5KUUG//sdUiR5vNXczbYWVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Lahiye\\CarApp\\CarApp\\DataAccess\\DataAccess.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\farid\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

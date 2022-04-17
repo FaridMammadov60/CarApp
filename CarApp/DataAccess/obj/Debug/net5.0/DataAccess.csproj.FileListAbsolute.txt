@@ -13,3 +13,5 @@ C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\obj\Debug\net5.0\DataAcce
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\obj\Debug\net5.0\refint\DataAccess.dll
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\obj\Debug\net5.0\DataAccess.pdb
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\bin\Debug\net5.0\Utilities.dll
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\bin\Debug\net5.0\Utilities.pdb

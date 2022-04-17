@@ -105,6 +105,11 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
+        /// <summary>
+        /// Method çağrılarkən model istəyir və avtosalona model əlave edir
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool CreateModelIntoAvtoSalon(Model entity)
         {
             try
@@ -120,6 +125,12 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
+        /// <summary>
+        /// Method çağrılarkən avtosalon və medol isteyir və avtosalonun içinəki modeli silir
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public bool DeleteModel(AvtoSalon brand, Model model)
         {
             try

@@ -23,3 +23,4 @@ C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\DataAccess.p
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Entities.pdb
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Utilities.pdb
 C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\obj\Debug\net5.0\CarApp.csproj.CopyComplete
+C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\CarApp\bin\Debug\net5.0\Newtonsoft.Json.dll

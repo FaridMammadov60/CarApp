@@ -66,7 +66,7 @@ namespace CarApp.Controllers
                 return;
             }
             _avtoSalonService.GetOne(id);
-            Extention.Print(ConsoleColor.DarkCyan, "Enter to Brand Name: ");
+            Extention.Print(ConsoleColor.DarkCyan, "Enter to avtosalon Name: ");
             string name = Extention.TryEmptyMethod();
 
 
@@ -146,6 +146,9 @@ namespace CarApp.Controllers
             AvtoSalon avtoSalon = _avtoSalonService.Delete(id);
             Extention.Print(ConsoleColor.Green, $"{avtoSalon.Name}");
         }
+        /// <summary>
+        /// Avtosalonun içinə model daxil edirik
+        /// </summary>
         public void ModelAddAvtoSalon()
         {
             Console.Clear();
@@ -164,7 +167,15 @@ namespace CarApp.Controllers
             Extention.Print(ConsoleColor.DarkCyan, "Enter to Model id: ");
             int id1 = Extention.TryParseMethod();
             ModelController modelController = new ModelController();
-
+            foreach (var item in _avtoSalonService.GetOne(id).Model)
+            {
+                if (modelController.GetModel(id1).Id ==item.Id)
+                {
+                    Extention.Print(ConsoleColor.Red, "This Model already exists");
+                    return;
+                }
+            }
+            
             _avtoSalonService.CreatModelIntoBrand(modelController.GetModel(id1), id);
 
         }

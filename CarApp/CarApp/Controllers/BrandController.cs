@@ -60,9 +60,16 @@ namespace CarApp.Controllers
                 return;
             }
             ModelController modelController = new ModelController();
-            Model model = modelController.CreatModelinBrand();
+            foreach (var item in _brandService.GetOne(id).Model)
+            {
+                if (modelController.GetModel(id).Id == item.Id)
+                {
+                    Extention.Print(ConsoleColor.Red, "This Model already exists");
+                    return;
+                }
+            }          
 
-            _brandService.CreatModelIntoBrand(model, id);
+            _brandService.CreatModelIntoBrand(modelController.CreatModelinBrand(), id);
 
         }
         /// <summary>

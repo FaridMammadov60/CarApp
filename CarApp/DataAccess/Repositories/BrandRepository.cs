@@ -119,7 +119,12 @@ namespace DataAccess.Repositories
                 throw;
             }
         }
-
+        /// <summary>
+        /// Method çağrılarkən Brand və Model istəyir və brandin içindəki modeli silir
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public bool DeleteModel(Brand brand, Model model)
         {
             try
