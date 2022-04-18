@@ -26,7 +26,16 @@ namespace DataAccess
             AvtoSalons = new List<AvtoSalon>();
         }
         #endregion
-        
+        //datacontextin içindəki 3 listde sql olsaydı cədvəl yaradacaqdı amma cədvəl olmadığından 
+        //aşağıdakı kodlarla database.json faylına yazdırıram.
+        //aşağıda serialize edirəm lakin fayılda olanları deserialize etmeyi ehtiyaz duymadım
+
+
+
+        /// <summary>
+        /// faylın oxunması  və consola yazdırılması üçün
+        /// </summary>
+        /// <param name="path"></param>
         public static void StreamReader(string path)
         {            
             if (!File.Exists(path))
@@ -41,7 +50,10 @@ namespace DataAccess
             Extention.Print(ConsoleColor.DarkBlue, result);                     
 
         }
-
+        /// <summary>
+        /// listdəki məlumatları fayla yazdırmaq üçün
+        /// </summary>
+        /// <param name="path"></param>
         public static void StreamWriter(string path)
         {           
             string addJson = JsonConvert.SerializeObject(Brands);
@@ -55,6 +67,10 @@ namespace DataAccess
             }
             
         }
+        /// <summary>
+        /// fayıldakı məlumatların üstünə boş yazı yazıb məlumatları silmək üçün
+        /// </summary>
+        /// <param name="path"></param>
         public static void StreamRemove(string path)
         {
             using (StreamWriter swe = new StreamWriter(path))
