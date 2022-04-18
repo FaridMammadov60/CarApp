@@ -9,7 +9,7 @@ namespace CarApp
     {
         static void Main(string[] args)
         {
-            Extention.Print(ConsoleColor.Green, "-------Welcome-------");
+            Extention.Print(ConsoleColor.Green, "-------Welcome-------\n");
             string path = @"C:\Users\farid\Desktop\Lahiye\CarApp\CarApp\DataAccess\database.json";            
             BrandController brandController = new BrandController();
             ModelController modelController = new ModelController();
