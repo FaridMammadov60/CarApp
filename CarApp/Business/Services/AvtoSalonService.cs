@@ -11,6 +11,7 @@ namespace Business.Services
     {
         //Avtosalon yaranan zaman fərqli id-də olması üçün Create methodunda count++ qeyd edilib
         public static int Count { get; set; }
+
         //yaradılmış avtosalon-larin sayın tapmaq və avtosalon sıfırdısa remove update kimi methodların istifadəsinin
         //qarşısın almaq üçün create methodunda counter ++ remove methodunda isə counter-- qeyd edilib
         public static int Counter { get; set; }
