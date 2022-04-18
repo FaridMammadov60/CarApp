@@ -122,13 +122,7 @@ namespace Utilities.Helper
             }
             word = word.ToUpper();
             return word;
-        }
-        public static bool CheckId()
-        {
-
-            //baxilmali
-            return true;
-        }
+        }       
 
         #endregion
 
