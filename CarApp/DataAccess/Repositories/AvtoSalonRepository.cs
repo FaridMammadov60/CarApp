@@ -128,16 +128,16 @@ namespace DataAccess.Repositories
         /// <summary>
         /// Method çağrılarkən avtosalon və medol isteyir və avtosalonun içinəki modeli silir
         /// </summary>
-        /// <param name="brand"></param>
+        /// <param name="avto"></param>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool DeleteModel(AvtoSalon brand, Model model)
+        public bool DeleteModel(AvtoSalon avto, Model model)
         {
             try
             {
                 foreach (var item in DataContext.AvtoSalons)
                 {
-                    if (brand.Id == model.AvtoSalonId)
+                    if (avto.Id == model.AvtoSalonId)
                     {
                         item.Model.Remove(model);
                     }

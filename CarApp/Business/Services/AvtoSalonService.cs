@@ -9,13 +9,13 @@ namespace Business.Services
 {
     public class AvtoSalonService : IService<AvtoSalon>
     {
-        //Brand yaranan zaman fərqli id-də olması üçün Create methodunda count++ qeyd edilib
+        //Avtosalon yaranan zaman fərqli id-də olması üçün Create methodunda count++ qeyd edilib
         public static int Count { get; set; }
         //yaradılmış avtosalon-larin sayın tapmaq və avtosalon sıfırdısa remove update kimi methodların istifadəsinin
         //qarşısın almaq üçün create methodunda counter ++ remove methodunda isə counter-- qeyd edilib
         public static int Counter { get; set; }
 
-        //BrandRepository-dəki methodları çagırmaq üçün istifade edilecək
+        //AvtosalonRepository-dəki methodları çagırmaq üçün istifade edilecək
         private AvtoSalonRepository _avtoSalonRepository;
 
         public AvtoSalonService()
@@ -155,7 +155,7 @@ namespace Business.Services
         /// <param name="model"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        public AvtoSalon CreatModelIntoBrand(Model model, int id)
+        public AvtoSalon CreatModelIntoAvtosalon(Model model, int id)
         {
             try
             {

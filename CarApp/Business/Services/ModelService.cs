@@ -52,7 +52,7 @@ namespace Business.Services
         /// <summary>
         /// Method çağrılarkın id isteyir və id-yə uyğun modeli tapır əgər id-yə uyğun model yoxdursa null qaytarır
         /// Tapılmış modeli silmək üçün modelrepositoriyə gonderir
-        /// Əgər modelin brand id-si varsa brandin icinde olan modelid' silir
+        /// Əgər modelin brand id-si varsa brandin icinde olan modelidi silir
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -122,7 +122,7 @@ namespace Business.Services
         }
         /// <summary>
         /// Methodu çağırarkən Model və id istəyir və id üzrə modelRepositor.getOne methodun çağırır
-        /// əgər id-yə uyğun brand yoxdursa null qaytarır
+        /// əgər id-yə uyğun model yoxdursa null qaytarır
         /// Tapılmış modelə yeni məlumatlar mənimsədilir və update üçün modelrepositoryə göndərilir 
         /// </summary>
         /// <param name="entity"></param>

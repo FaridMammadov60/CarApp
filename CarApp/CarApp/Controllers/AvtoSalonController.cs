@@ -47,7 +47,7 @@ namespace CarApp.Controllers
 
         }
         /// <summary>
-        /// AvtoSalonda olan məlumatları yeniləyib brand servisə göndəririk
+        /// AvtoSalonda olan məlumatları yeniləyib avtosalonservisə göndəririk
         /// </summary>
         public void UpdateAvtoSalon()
         {
@@ -176,7 +176,7 @@ namespace CarApp.Controllers
                 }
             }
             
-            _avtoSalonService.CreatModelIntoBrand(modelController.GetModel(id1), id);
+            _avtoSalonService.CreatModelIntoAvtosalon(modelController.GetModel(id1), id);
 
         }
     }
