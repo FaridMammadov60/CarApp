@@ -175,7 +175,11 @@ namespace CarApp.Controllers
                     return;
                 }
             }
-            
+            if (modelController.GetModel(id1) == null)
+            {
+                Extention.Print(ConsoleColor.Red, "Model is not");
+                return;
+            }
             _avtoSalonService.CreatModelIntoAvtosalon(modelController.GetModel(id1), id);
 
         }

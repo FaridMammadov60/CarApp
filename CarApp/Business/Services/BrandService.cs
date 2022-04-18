@@ -172,7 +172,7 @@ namespace Business.Services
                 {
                     Extention.Print(ConsoleColor.Red, "Id does not exist");
                     return null;
-                }
+                }                
                 model.BrandId = id;
                 _brandRepository.CreateModelIntoBrand(model);
                 return brand;

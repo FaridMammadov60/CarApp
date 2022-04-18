@@ -43,8 +43,13 @@ namespace CarApp.Controllers
                     Extention.Print(ConsoleColor.Red, "This Model already exists");
                     return;
                 }
+                
             }
-
+            if (modelController.GetModel(id1)==null)
+            {
+                Extention.Print(ConsoleColor.Red, "Model is not");
+                return;
+            }
             _brandService.CreatModelIntoBrand(modelController.GetModel(id1), id);
 
         }
